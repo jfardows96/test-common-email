@@ -107,4 +107,10 @@ public class EmailTest {
 		assertEquals("content",conT);	
 		
 	}
+	@Test 
+   public void testgetMailSession() throws Exception{
+		email.getMailSession();
+		assertEquals(0,email.getMailSession());
+	
+}
 }
