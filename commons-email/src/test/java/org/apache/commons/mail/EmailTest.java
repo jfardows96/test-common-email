@@ -89,5 +89,22 @@ public class EmailTest {
 			email.setFrom("jan@gmail.com");
 			assertEquals("jan@gmail.com",email.getFromAddress().toString());
 	}
+	@Test
+	public void testbuildMimeMessage() throws Exception{
+		
+		email.setHostName("localhost");
+		email.setSmtpPort(9090);
+		email.setFrom("assf@gmail.com");
+		email.addTo("ddjl@yahoo.com");
+		email.setSubject("aSubject");
+		final String headerValue= "22939u9   388338    39399333434";
+		email.addHeader("jskjdk", headerValue);
+		email.content = "content";
+		email.buildMimeMessage();
+		MimeMessage msg = email.getMimeMessage();
 
+		String conT = msg.getContent().toString();
+		assertEquals("content",conT);	
+		
+	}
 }
