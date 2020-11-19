@@ -58,5 +58,10 @@ public class EmailTest {
 		email.addReplyTo(TEST_EMAILS2, "Jannatul");
 		assertEquals(1, email.getReplyToAddresses().size());
 	}
-	
+	@Test 
+	public void testgetHostName() throws Exception{
+		email.setHostName("localhost");
+		
+		assertEquals("localhost",email.getHostName());
+	}
 }
