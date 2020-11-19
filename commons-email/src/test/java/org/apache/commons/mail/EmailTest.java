@@ -46,5 +46,11 @@ public class EmailTest {
 		assertEquals(6000, email.getSocketConnectionTimeout());
 	}
 
+	@Test
+	public void testAddHeader() throws Exception{
+		email.addHeader(header, "check");
+		
+		assertEquals(1, email.headers.size());
+	}
 	
 }
