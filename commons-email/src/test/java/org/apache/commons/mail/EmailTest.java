@@ -1,6 +1,11 @@
 package org.apache.commons.mail;
 
 import static org.junit.Assert.assertEquals;
+import java.util.Calendar;
+import java.util.Date;
+
+import javax.mail.internet.MimeMessage;
+
 
 import org.junit.After;
 import org.junit.Before;
@@ -69,5 +74,13 @@ public class EmailTest {
 		email.setHostName(null);
 		
 		assertEquals(null,email.getHostName());
+	}
+	@Test
+	public void testgetSentDate() throws Exception{
+		
+		Date dtTest = Calendar.getInstance().getTime();
+		email.setSentDate(dtTest);
+		
+		assertEquals(dtTest, email.getSentDate());
 	}
 }
