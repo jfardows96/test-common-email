@@ -83,4 +83,11 @@ public class EmailTest {
 		
 		assertEquals(dtTest, email.getSentDate());
 	}
+	@Test
+	public void testSetFrom() throws Exception{
+			
+			email.setFrom("jan@gmail.com");
+			assertEquals("jan@gmail.com",email.getFromAddress().toString());
+	}
+
 }
