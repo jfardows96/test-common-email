@@ -9,8 +9,8 @@ import org.junit.Test;
 public class EmailTest {
 
 	private static final String[] TEST_EMAILS = {"bbbbbbbbbb@gmail.com", "bcccccss@yahoo.com", "kkksbcccc@bd.com"};
-	//private static final String TEST_EMAILS2 =  "Jannatul@gmail.com";
-	//private static String header = "check";
+	private static final String TEST_EMAILS2 =  "Jannatul@gmail.com";
+	private static String header = "check";
 	
 	private EmailConcrete email;
 	 
@@ -33,4 +33,11 @@ public class EmailTest {
 		assertEquals(3, email.getBccAddresses().size());
 	}
 	
+	@Test
+	public void testAddReplyTo() throws Exception{
+		
+		email.addReplyTo(TEST_EMAILS2, "Jannatul");
+		assertEquals(1, email.getReplyToAddresses().size());
+	}
+
 }
