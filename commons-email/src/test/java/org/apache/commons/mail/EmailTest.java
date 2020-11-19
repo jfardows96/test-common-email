@@ -34,11 +34,11 @@ public class EmailTest {
 	}
 	
 	@Test
-	public void testAddReplyTo() throws Exception{
-		
-		email.addReplyTo(TEST_EMAILS2, "Jannatul");
-		assertEquals(1, email.getReplyToAddresses().size());
+	public void testAddCc() throws Exception{
+		email.addCc(TEST_EMAILS2);
+		assertEquals(1, email.getCcAddresses().size());
 	}
+	
 	@Test
 	public void testgetSocketConnectionTimeout() throws Exception{
 		
@@ -46,4 +46,5 @@ public class EmailTest {
 		assertEquals(6000, email.getSocketConnectionTimeout());
 	}
 
+	
 }
