@@ -64,4 +64,10 @@ public class EmailTest {
 		
 		assertEquals("localhost",email.getHostName());
 	}
+	@Test 
+	public void testnullgetHostName() throws Exception{
+		email.setHostName(null);
+		
+		assertEquals(null,email.getHostName());
+	}
 }
